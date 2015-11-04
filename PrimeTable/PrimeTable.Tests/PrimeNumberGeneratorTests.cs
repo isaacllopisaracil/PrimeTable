@@ -18,18 +18,20 @@ namespace PrimeTable.Tests
             _testObject = new Lib.PrimeNumberGenerator();
         }
 
-        [TestCase(10)]
+        [TestCase(10, ExpectedResult = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 })]
         [TestCase(0, ExpectedException = typeof(ArgumentOutOfRangeException))]
-        [TestCase(-1,ExpectedException = typeof(ArgumentOutOfRangeException))]
+        [TestCase(-1, ExpectedException = typeof(ArgumentOutOfRangeException))]
         [Test]
-        public void PrimeNumberGenerator_Generate(int length)
+        public IEnumerable<int> PrimeNumberGenerator_Generate(int length)
         {
             // Arrange
             // Act
             var result = _testObject.Generate(length);
 
             // Assert
-            Assert.Equals(length, result.Count());
+            Assert.AreEqual(length, result.Count());
+
+            return result;
         }
 
         [TestCase(4, ExpectedResult = false)]

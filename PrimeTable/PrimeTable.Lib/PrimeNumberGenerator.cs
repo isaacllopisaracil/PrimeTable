@@ -11,7 +11,20 @@ namespace PrimeTable.Lib
             if (length <= 0)
                 throw new ArgumentOutOfRangeException($"Method {nameof(Generate)} only accepts {nameof(length)} values greater than 0.");
 
-            throw new NotImplementedException("This is a method stub.");
+            int value = 2;
+            var result = new int[length];
+            result[0] = value;
+
+            for(int i = 1; i< length; i++)
+            {
+                do
+                {
+                    value++;
+                } while (!IsPrime(value));
+                result[i] = value;
+            }
+
+            return result;
         }
 
         public bool IsPrime(int value)

@@ -31,5 +31,20 @@ namespace PrimeTable.Tests
             // Assert
             Assert.Equals(length, result.Count());
         }
+
+        [TestCase(4, ExpectedResult = false)]
+        [TestCase(2, ExpectedResult = true)]
+        [TestCase(1, ExpectedException = typeof(ArgumentOutOfRangeException))]
+        [TestCase(0, ExpectedException = typeof(ArgumentOutOfRangeException))]
+        [Test]
+        public bool PrimeNumberGenerator_IsPrime(int value)
+        {
+            // Arrange
+            // Act
+            var result = _testObject.IsPrime(value);
+
+            // Assert
+            return result;
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace PrimeTable.Lib
 
             throw new NotImplementedException("This is a method stub.");
         }
+
+        public bool IsPrime(int value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

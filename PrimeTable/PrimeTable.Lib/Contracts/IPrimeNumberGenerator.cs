@@ -9,5 +9,7 @@ namespace PrimeTable.Lib.Contracts
     public interface IPrimeNumberGenerator
     {
         IEnumerable<int> Generate(int length);
+
+        bool IsPrime(int value);
     }
 }

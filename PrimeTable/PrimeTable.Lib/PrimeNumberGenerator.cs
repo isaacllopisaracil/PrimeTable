@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PrimeTable.Lib
 {
-    public class PrimeNumberGenerator : IPrimeNumberGenerator, IPrimeNumberValidator
+    public class PrimeNumberGenerator : IPrimeNumberGenerator
     {
         public IEnumerable<int> Generate(int length)
         {
@@ -39,7 +39,7 @@ namespace PrimeTable.Lib
 
             // General case
             var end = Math.Floor(Math.Sqrt(value));
-            for(int i = 2; i <= end; i++)
+            for (int i = 2; i <= end; i++)
                 if (value % i == 0) return false;
 
             return true;

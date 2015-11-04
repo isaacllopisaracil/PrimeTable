@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
+using PrimeTable.Lib;
+using PrimeTable.Lib.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +17,13 @@ namespace PrimeTable.Tests
         [TestFixtureSetUp]
         public void BeforeAllTests()
         {
+            // Initialize mocks
+            var m_IPrimeNumberGenerator = new Mock<IPrimeNumberGenerator>();
+            m_IPrimeNumberGenerator.Setup(x => x.Generate(It.IsInRange(1, 10, Range.Inclusive)))
+                .Returns((int x) => new int[] { 2, 3, 5, 7, 11, 13, 19, 21, 29 }.Take(x));
 
-        }
-
-        [SetUp]
-        public void BeforeEachTest()
-        {
-            _testObject = new Lib.PrimeTableGenerator();
+            // Initialize test object
+            _testObject = new PrimeTableGenerator(m_IPrimeNumberGenerator.Object);
         }
 
         [TestCase(3)]

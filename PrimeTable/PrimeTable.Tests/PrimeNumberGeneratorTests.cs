@@ -13,7 +13,7 @@ namespace PrimeTable.Tests
         private Lib.PrimeNumberGenerator _testObject;
 
         [SetUp]
-        void BeforeEachTest()
+        public void BeforeEachTest()
         {
             _testObject = new Lib.PrimeNumberGenerator();
         }
@@ -22,7 +22,7 @@ namespace PrimeTable.Tests
         [TestCase(0, ExpectedException = typeof(ArgumentOutOfRangeException))]
         [TestCase(-1,ExpectedException = typeof(ArgumentOutOfRangeException))]
         [Test]
-        void PrimeNumberGenerator_Generate(int length)
+        public void PrimeNumberGenerator_Generate(int length)
         {
             // Arrange
             // Act

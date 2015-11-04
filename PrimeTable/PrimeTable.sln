@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeTable.Tests", "PrimeTable.Tests\PrimeTable.Tests.csproj", "{1A266DB0-FDAA-4536-B76F-D0E1F28C2298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeTable.Lib", "PrimeTable.Lib\PrimeTable.Lib.csproj", "{940CAD7D-27BD-40CF-8E34-3825B645CBAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A266DB0-FDAA-4536-B76F-D0E1F28C2298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A266DB0-FDAA-4536-B76F-D0E1F28C2298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A266DB0-FDAA-4536-B76F-D0E1F28C2298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A266DB0-FDAA-4536-B76F-D0E1F28C2298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{940CAD7D-27BD-40CF-8E34-3825B645CBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CAD7D-27BD-40CF-8E34-3825B645CBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940CAD7D-27BD-40CF-8E34-3825B645CBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{940CAD7D-27BD-40CF-8E34-3825B645CBAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

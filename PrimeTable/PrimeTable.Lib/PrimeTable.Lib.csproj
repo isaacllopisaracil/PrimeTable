@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IPrimeNumberGenerator.cs" />
+    <Compile Include="Contracts\IPrimeNumberValidator.cs" />
+    <Compile Include="Contracts\IPrimeTableGenerator.cs" />
     <Compile Include="PrimeNumberGenerator.cs" />
     <Compile Include="PrimeTableGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

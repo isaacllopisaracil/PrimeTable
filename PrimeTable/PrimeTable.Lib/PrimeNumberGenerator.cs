@@ -1,9 +1,10 @@
-﻿using System;
+﻿using PrimeTable.Lib.Contracts;
+using System;
 using System.Collections.Generic;
 
 namespace PrimeTable.Lib
 {
-    public class PrimeNumberGenerator
+    public class PrimeNumberGenerator : IPrimeNumberGenerator, IPrimeNumberValidator
     {
         public IEnumerable<int> Generate(int length)
         {
@@ -29,6 +30,7 @@ namespace PrimeTable.Lib
 
         public bool IsPrime(int value)
         {
+            // Validate
             if (value <= 1)
                 throw new ArgumentOutOfRangeException($"Method {nameof(IsPrime)} only accepts {nameof(value)} values greater than 1.");
 

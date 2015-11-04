@@ -11,6 +11,12 @@ namespace PrimeTable.Tests
     {
         private Lib.PrimeTableGenerator _testObject;
 
+        [TestFixtureSetUp]
+        public void BeforeAllTests()
+        {
+
+        }
+
         [SetUp]
         public void BeforeEachTest()
         {

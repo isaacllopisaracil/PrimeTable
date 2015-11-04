@@ -29,7 +29,7 @@ namespace PrimeTable.Tests
         [TestCase(3)]
         [TestCase(0, ExpectedException = typeof(ArgumentOutOfRangeException))]
         [Test]
-        public int?[,] PrimeTableGenerator_Generate(int length)
+        public void PrimeTableGenerator_Generate(int length)
         {
             // Arrange
             var expected_3 = new[,] { { (int?)null, 2, 3, 5 }, { 2, 4, 6, 10 }, { 3, 6, 9, 15 }, { 5, 10, 15, 25 } };
@@ -43,8 +43,6 @@ namespace PrimeTable.Tests
 
             if (length == 3)
                 Assert.AreEqual(expected_3, result);
-
-            return result;
         }
     }
 }

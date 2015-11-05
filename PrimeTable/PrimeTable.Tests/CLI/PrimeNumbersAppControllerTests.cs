@@ -38,7 +38,7 @@ namespace PrimeTable.Tests.CLI
 
         [TestCase(3)]
         [TestCase(0, ExpectedException = typeof(ArgumentOutOfRangeException))]
-        [TestCase(10, ExpectedException = typeof(ArgumentOutOfRangeException))]
+        [TestCase(11, ExpectedException = typeof(ArgumentOutOfRangeException))]
         [Test]
         public void PrimeNumbersAppController_Run(int value)
         {

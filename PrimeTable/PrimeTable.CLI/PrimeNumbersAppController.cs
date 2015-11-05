@@ -27,8 +27,8 @@ namespace PrimeTable.CLI
         public void Run(int value)
         {
             // Validate
-            if (value <= 0)
-                throw new ArgumentOutOfRangeException($"Method {nameof(Run)} only accepts {nameof(value)} values greater than 0.");
+            if (value <= 0 || value > 10)
+                throw new ArgumentOutOfRangeException($"Method {nameof(Run)} only accepts {nameof(value)} values from 1 to 10.");
 
             // Calculate array
             var result = _primeTableGenerator.Generate(value);

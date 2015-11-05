@@ -37,7 +37,7 @@ namespace PrimeTable.Tests.CLI
         }
 
         [TestCase(3)]
-        [TestCase(0, ExpectedException = typeof(ArgumentException))]
+        [TestCase(0, ExpectedException = typeof(ArgumentOutOfRangeException))]
         [Test]
         public void PrimeNumbersAppController_Run(int value)
         {
@@ -53,16 +53,16 @@ namespace PrimeTable.Tests.CLI
 
             // Assert
             Assert.AreEqual(
-@"
---------------------
-¦    ¦  2 ¦  3 ¦  5 ¦
---------------------
-¦  2 ¦  4 ¦  6 ¦ 10 ¦
---------------------
-¦  3 ¦  6 ¦  9 ¦ 15 ¦
---------------------
-¦  5 ¦ 10 ¦ 15 ¦ 25 ¦
---------------------", m_outputWriter_string.ToString());
+                "--------------------\n" +
+                "¦    ¦  2 ¦  3 ¦  5 ¦\n" +
+                "--------------------\n" +
+                "¦  2 ¦  4 ¦  6 ¦ 10 ¦\n" +
+                "--------------------\n" +
+                "¦  3 ¦  6 ¦  9 ¦ 15 ¦\n" +
+                "--------------------\n" +
+                "¦  5 ¦ 10 ¦ 15 ¦ 25 ¦\n" +
+                "--------------------\n",
+                m_outputWriter_string.ToString());
         }
     }
 }

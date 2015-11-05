@@ -34,13 +34,12 @@ namespace PrimeTable.CLI
             var result = _primeTableGenerator.Generate(value);
 
             // Get values to render in console
-            var side = result.GetUpperBound(0);
-            var maxValue = result[side, side];
+            var side = result.GetUpperBound(0) + 1;
+            var maxValue = result[side-1, side-1];
             var numberWidth = maxValue.ToString().Length;
-            var sideCharacters = (numberWidth + 2) * side + 2;
+            var sideCharacters = (numberWidth + 3) * side;
 
             // Render
-            _outputWriter.Write("\n");
             for (int x = 0; x < side; x++)
             {
                 WriteLineOf(_outputWriter, "-", sideCharacters);

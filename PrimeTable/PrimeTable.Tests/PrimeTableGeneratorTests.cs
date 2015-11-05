@@ -12,18 +12,15 @@ namespace PrimeTable.Tests
 {
     class PrimeTableGeneratorTests
     {
-        private Lib.PrimeTableGenerator _testObject;
+        Mock<IPrimeNumberGenerator> m_IPrimeNumberGenerator;
 
         [TestFixtureSetUp]
         public void BeforeAllTests()
         {
             // Initialize mocks
-            var m_IPrimeNumberGenerator = new Mock<IPrimeNumberGenerator>();
+            m_IPrimeNumberGenerator = new Mock<IPrimeNumberGenerator>();
             m_IPrimeNumberGenerator.Setup(x => x.Generate(It.IsInRange(1, 10, Range.Inclusive)))
                 .Returns((int x) => new int[] { 2, 3, 5, 7, 11, 13, 19, 21, 29 }.Take(x));
-
-            // Initialize test object
-            _testObject = new PrimeTableGenerator(m_IPrimeNumberGenerator.Object);
         }
 
         [TestCase(3)]
@@ -32,10 +29,12 @@ namespace PrimeTable.Tests
         public void PrimeTableGenerator_Generate(int length)
         {
             // Arrange
+            // Initialize test object
+            var testObject = new PrimeTableGenerator(m_IPrimeNumberGenerator.Object);
             var expected_3 = new[,] { { (int?)null, 2, 3, 5 }, { 2, 4, 6, 10 }, { 3, 6, 9, 15 }, { 5, 10, 15, 25 } };
 
             // Act
-            var result = _testObject.Generate(length);
+            var result = testObject.Generate(length);
 
             // Assert
             Assert.AreEqual(null, result[0, 0]);

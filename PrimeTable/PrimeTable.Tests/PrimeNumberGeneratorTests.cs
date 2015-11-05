@@ -10,14 +10,6 @@ namespace PrimeTable.Tests
     [TestFixture]
     class PrimeNumberGeneratorTests
     {
-        private Lib.PrimeNumberGenerator _testObject;
-
-        [SetUp]
-        public void BeforeEachTest()
-        {
-            _testObject = new Lib.PrimeNumberGenerator();
-        }
-
         [TestCase(10, ExpectedResult = new[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 })]
         [TestCase(0, ExpectedException = typeof(ArgumentOutOfRangeException))]
         [TestCase(-1, ExpectedException = typeof(ArgumentOutOfRangeException))]
@@ -25,8 +17,10 @@ namespace PrimeTable.Tests
         public IEnumerable<int> PrimeNumberGenerator_Generate(int length)
         {
             // Arrange
+            var testObject = new Lib.PrimeNumberGenerator();
+
             // Act
-            var result = _testObject.Generate(length);
+            var result = testObject.Generate(length);
 
             // Assert
             Assert.AreEqual(length, result.Count());
@@ -42,8 +36,10 @@ namespace PrimeTable.Tests
         public bool PrimeNumberGenerator_IsPrime(int value)
         {
             // Arrange
+            var testObject = new Lib.PrimeNumberGenerator();
+
             // Act
-            var result = _testObject.IsPrime(value);
+            var result = testObject.IsPrime(value);
 
             // Assert
             return result;

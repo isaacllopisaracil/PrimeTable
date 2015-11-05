@@ -44,6 +44,7 @@ a parameter.
 
 ### NuGet dependencies
 Note the following NuGet package dependencies:
+
 - Moq.4.2.1510.2205
 - NUnit.2.6.4
 
@@ -85,6 +86,11 @@ needs to be extended.
 calculated to have the same width. It is not just printing what is
 in the result, but it is aligned to the right too. That's just
 to present the information in a readable, user-friendly manner.
+ - To see the difference, run the application with parameters `3`,
+`4`, and `10`. Notice how when the numbers in the array are
+single-digit, the cells' width is smaller than when the numbers
+have two or three digits. Note also that in these cases, all numbers
+are aligned to the right.
 - **Error messaging**: If you try to run the application with a bad
 input, the application will run but show error messages in red. The
 messages are humanly readable so that the user can know what is wrong

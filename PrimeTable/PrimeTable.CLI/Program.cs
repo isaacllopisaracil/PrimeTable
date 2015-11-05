@@ -12,22 +12,28 @@ namespace PrimeTable.CLI
     {
         static void Main(string[] args)
         {
-            int value = -1;
-            if (args.Length == 1 && int.TryParse(args[0], out value))
-            {
-                // This is a single AppController
-                // For applications with multiple commands this can be extracted
-                // to an interface and select depending on the commands
-                // A Dependency Injection strategy can be applied
-                var appController = new PrimeNumbersAppController(
-                    new PrimeTableGenerator(new PrimeNumberGenerator()),
-                    new ConsoleOutputWriter());
+            try {
+                int value = -1;
+                if (args.Length == 1 && int.TryParse(args[0], out value))
+                {
+                    // This is a single AppController
+                    // For applications with multiple commands this can be extracted
+                    // to an interface and select depending on the commands
+                    // A Dependency Injection strategy can be applied
+                    var appController = new PrimeNumbersAppController(
+                        new PrimeTableGenerator(new PrimeNumberGenerator()),
+                        new ConsoleOutputWriter());
 
-                appController.Run(value);
+                    appController.Run(value);
+                }
+                else
+                {
+                    Error("Please use an integer, between 1 and 10, as parameter to run this application.");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Error("Please use an integer, greater than 0, as parameter to run this application.");
+                Error($"The application found an error:\n{ex.Message}");
             }
 
             Console.Read();

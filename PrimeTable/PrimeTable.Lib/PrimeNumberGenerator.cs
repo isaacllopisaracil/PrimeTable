@@ -10,7 +10,7 @@ namespace PrimeTable.Lib
         {
             // Validate
             if (length <= 0)
-                throw new ArgumentOutOfRangeException($"Method {nameof(Generate)} only accepts {nameof(length)} values greater than 0.");
+                throw new ArgumentOutOfRangeException(nameof(length), $"Method {nameof(Generate)} only accepts {nameof(length)} values greater than 0.");
 
             int value = 2;
             var result = new int[length];
@@ -32,7 +32,7 @@ namespace PrimeTable.Lib
         {
             // Validate
             if (value <= 1)
-                throw new ArgumentOutOfRangeException($"Method {nameof(IsPrime)} only accepts {nameof(value)} values greater than 1.");
+                throw new ArgumentOutOfRangeException(nameof(value), $"Method {nameof(IsPrime)} only accepts {nameof(value)} values greater than 1.");
 
             // Special case 2
             if (value == 2) return true;

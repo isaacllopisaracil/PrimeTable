@@ -18,7 +18,7 @@ namespace PrimeTable.Lib
         {
             // Validate
             if (length <= 0)
-                throw new ArgumentOutOfRangeException($"Method {nameof(Generate)} only accepts {nameof(length)} values greater than 0.");
+                throw new ArgumentOutOfRangeException(nameof(length), $"Method {nameof(Generate)} only accepts {nameof(length)} values greater than 0.");
 
             var primeList = _primeNumberGenerator.Generate(length).ToArray();
             var result = new int?[length + 1, length + 1];

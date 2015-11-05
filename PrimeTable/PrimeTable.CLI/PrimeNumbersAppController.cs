@@ -17,8 +17,8 @@ namespace PrimeTable.CLI
             IPrimeTableGenerator primeTableGenerator,
             IOutputWriter outputWriter)
         {
-            if (primeTableGenerator == null) throw new ArgumentNullException($"Argument {nameof(primeTableGenerator)} cannot be null.", nameof(primeTableGenerator));
-            if (outputWriter == null) throw new ArgumentNullException($"Argument {nameof(outputWriter)} cannot be null.", nameof(outputWriter));
+            if (primeTableGenerator == null) throw new ArgumentNullException(nameof(primeTableGenerator), $"Argument {nameof(primeTableGenerator)} cannot be null.");
+            if (outputWriter == null) throw new ArgumentNullException(nameof(outputWriter), $"Argument {nameof(outputWriter)} cannot be null.");
 
             _primeTableGenerator = primeTableGenerator;
             _outputWriter = outputWriter;
@@ -28,7 +28,7 @@ namespace PrimeTable.CLI
         {
             // Validate
             if (value <= 0 || value > 10)
-                throw new ArgumentOutOfRangeException($"Method {nameof(Run)} only accepts {nameof(value)} values from 1 to 10.");
+                throw new ArgumentOutOfRangeException(nameof(value), $"Method {nameof(Run)} only accepts {nameof(value)} values from 1 to 10.");
 
             // Calculate array
             var result = _primeTableGenerator.Generate(value);

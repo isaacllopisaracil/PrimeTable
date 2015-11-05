@@ -42,6 +42,15 @@ You may also compile the application and run the generated
 executable directly, passing an integer between 1 and 10 as
 a parameter.
 
+### NuGet dependencies
+Note the following NuGet package dependencies:
+- Moq.4.2.1510.2205
+- NUnit.2.6.4
+
+The `packages` folder has been added to GIT for safety, but when
+running on Visual Studio, make sure that the option *Allow NuGet to
+download missing packages* is enabled.
+
 ## What I am pleased with
 - **Testability**: Almost every class has been abstracted to an
 appropriate interface in order to enhance testability and enable

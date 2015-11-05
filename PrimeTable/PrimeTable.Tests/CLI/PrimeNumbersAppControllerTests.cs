@@ -28,7 +28,7 @@ namespace PrimeTable.Tests.CLI
         }
 
         [Test]
-        void PrimeNumbersAppController_ctor_ParametersCannotBeNull()
+        public void PrimeNumbersAppController_ctor_ParametersCannotBeNull()
         {
             // Arrange, Act, Assert
             Assert.Throws(typeof(ArgumentNullException), () => new PrimeNumbersAppController(null, new Mock<IOutputWriter>().Object));
@@ -39,7 +39,7 @@ namespace PrimeTable.Tests.CLI
         [TestCase(3)]
         [TestCase(0, ExpectedException = typeof(ArgumentException))]
         [Test]
-        void PrimeNumbersAppController_Run(int value)
+        public void PrimeNumbersAppController_Run(int value)
         {
             // Arrange
             var m_PrimeTableGenerator = new Mock<IPrimeTableGenerator>();
@@ -55,13 +55,13 @@ namespace PrimeTable.Tests.CLI
             Assert.AreEqual(
 @"
 --------------------
-¦   ¦  2 ¦  3 ¦  5 ¦
+¦    ¦  2 ¦  3 ¦  5 ¦
 --------------------
-¦ 2 ¦  4 ¦  6 ¦ 10 ¦
+¦  2 ¦  4 ¦  6 ¦ 10 ¦
 --------------------
-¦ 3 ¦  6 ¦  9 ¦ 15 ¦
+¦  3 ¦  6 ¦  9 ¦ 15 ¦
 --------------------
-¦ 5 ¦ 10 ¦ 15 ¦ 25 ¦
+¦  5 ¦ 10 ¦ 15 ¦ 25 ¦
 --------------------", m_outputWriter_string.ToString());
         }
     }

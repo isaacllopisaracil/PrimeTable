@@ -26,14 +26,20 @@ namespace PrimeTable.CLI
 
         public void Run(int value)
         {
+            // Validate
+            if (value <= 0)
+                throw new ArgumentOutOfRangeException($"Method {nameof(Run)} only accepts {nameof(value)} values greater than 0.");
+
+            // Calculate array
             var result = _primeTableGenerator.Generate(value);
 
+            // Get values to render in console
             var side = result.GetUpperBound(0);
             var maxValue = result[side, side];
             var numberWidth = maxValue.ToString().Length;
-
             var sideCharacters = (numberWidth + 2) * side + 2;
 
+            // Render
             _outputWriter.Write("\n");
             for (int x = 0; x < side; x++)
             {

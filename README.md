@@ -115,12 +115,19 @@ too, and consume the array via asynchronous JavaScript through an API.
 - **More generalization**: The `IPrimeNumberGenerator` and
 `IPrimeTableGenerator` interfaces have a similar method `Generate`.
 There is a possible generalization there for an `IGenerator{TIn, TOut}`
-interface and possible base classes.
+interface and possible base classes. This would allow for a generator
+of other than prime numbers (say "Fibonacci", "Triangular", "Even",
+"Odd" or the simplest "Natural" number generators).
  - The same goes for the `PrimeNumbersAppController`. An
 `IAppController` can be extracted and a base class generated. Then
 an `AppControllerFactory` could bring up and execute the correct
 implementation for the commands in the input and have several
 tools in the same application.
+ - Another generalization can be done in the operation that the
+`PrimeTableGenerator` uses. If a more generic `TableGenerator` is
+created instead, it can be injected an operation to perform with
+the operands of the table (say "Multiply", "Add", "Subtract",
+"Divide", "Power", etc.).
 
 - **Dependency Injection (IoC)**: The classes in the application
 already have the constructors ready for dependency injection. A
